@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/baseTemplate :: head(~{::title})">
+	<title>Gestión de Productos</title>
+</head>
+<body>
+	<div th:replace="layout/baseTemplate :: navbar"></div>
+
+	<div class="container mt-4">
+		<div class="card shadow">
+			<div class="card-body">
+
+				<h3>Gestión de Productos</h3>
+				<hr>
+
+				<a th:href="@{/productos/nuevo}" class="btn btn-success btn-sm mb-3">
+					<i class="fa fa-plus-circle"></i> Nuevo Producto
+				</a>
+
+				<div th:replace="layout/mensaje :: msg"></div>
+
+				<table class="table table-bordered table-striped">
+					<thead>
+						<tr>
+							<th>ID</th>
+							<th>Nombre</th>
+							<th>Precio</th>
+							<th>Categoría</th>
+							<th>Destacado</th>
+							<th>Acciones</th>
+						</tr>
+					</thead>
+					<tbody>
+
+						<tr th:each="item : ${productos}">
+							<td th:text="${item.id}"></td>
+							<td th:text="${item.nombre}"></td>
+							<td>S/ <span th:text="${item.precio}"></span></td>
+							<td th:text="${item.categoria.nombre}"></td>
+
+							<td>
+								<span th:if="${item.destacado}" class="badge bg-success">Sí</span>
+								<span th:if="${!item.destacado}" class="badge bg-secondary">No</span>
+							</td>
+
+							<td>
+								<a th:href="@{'/productos/editar/' + ${item.id}}" class="btn btn-info btn-sm">
+									<i class="fa fa-edit"></i>
+								</a>
+
+								<a th:href="@{'/productos/eliminar/' + ${item.id}}"
+								   class="btn btn-danger btn-sm"
+								   th:onclick="|return confirm('¿Está seguro que desea eliminar el producto con ID ${item.id}?')|">
+								   <i class="fa fa-trash"></i>
+								</a>
+							</td>
+						</tr>
+
+					</tbody>
+				</table>
+
+			</div>
+		</div>
+
+	</div>
+
+	<div th:replace="layout/baseTemplate :: footer"></div>
+	<div th:replace="layout/baseTemplate :: js"></div>
+
+</body>
+
+</html>

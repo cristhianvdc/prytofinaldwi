@@ -1,0 +1,126 @@
+  nav{
+    font-family: 'Oswald', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+  }
+  
+  body{
+    font-family: 'Oswald', sans-serif;
+    font-weight: 400;
+  }
+
+  footer{
+    font-size: 18px;
+    background-color: #302f2f;
+  }
+
+  .dropdown-item{
+    font-size: 17px;
+  }
+
+  .dropdown-item:hover {
+    color: black;
+    font-size: 17px;
+    position: relative;
+    display: inline-block;
+    background-color: transparent;
+  }
+  
+  .dropdown-item::after,
+  .dropdown-item::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right, #ff0000, #000000);
+    bottom: -5px;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.4s ease-out;
+  }
+  
+  .dropdown-item::before {
+    top: -5px;
+    transform-origin: left;
+  }
+  
+  .dropdown-item:hover::after,
+  .dropdown-item:hover::before {
+    transform: scaleX(1);
+  }
+
+  /* Contenedor del carrusel con altura fija */
+  #carouselEjemplo {
+    height: 670px;
+    overflow: hidden; /* Evita desbordamientos */
+  }
+
+  /* Ajuste del carrusel interno */
+  #carouselEjemplo .carousel-inner {
+    height: 100%; /* 670px (hereda del padre) */
+  }
+
+  /* Cada slide del carrusel */
+  #carouselEjemplo .carousel-item {
+    width: 100%; /* Ocupa todo el ancho */
+    height: 100%; /* Ocupa todo el alto (670px) */
+  }
+
+  /* Imágenes dentro del carrusel (se deformarán para llenar el espacio) */
+  #carouselEjemplo .carousel-item img {
+    width: 100%; /* Ocupa todo el ancho */
+    height: 100%; /* Ocupa todo el alto (670px) */
+    object-fit: fill; /* Fuerza a que la imagen llene el espacio, aunque se deforme */
+  }
+
+  /* Estilo del modal */
+  .modal-product-img-container {
+    aspect-ratio: 1/1; /* Hace el contenedor cuadrado */
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .modal-product-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Ajusta la imagen manteniendo proporciones */
+  }
+
+  .modal-product-info {
+    font-size: 17px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    text-align: left;
+  }
+  
+  .h4-modal {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: end;
+    font-weight: 600;
+  }
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+    #carouselEjemplo {
+      height: 450px; 
+    }
+  }
+
+  @media (max-width: 767px) {
+    #carouselEjemplo {
+      height: 270px;
+    }
+  
+    #carouselEjemplo .carousel-item img {
+      object-fit: fill;
+    }
+    footer{
+      font-size: 15px;
+    }
+  }

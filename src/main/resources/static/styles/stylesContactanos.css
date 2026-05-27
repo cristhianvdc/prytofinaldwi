@@ -1,0 +1,40 @@
+.contact-hero {
+    padding: 2rem;
+    background-color: #F8F9FA;
+    border-bottom: 1px solid #e7dfdfca;
+  }
+
+  .contact-form-container {
+    max-width: 800px;
+    margin: 0 auto;
+    margin-top: 3rem;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  }
+  
+  .form-title {
+    font-weight: 700;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  
+  .btn-enviar {
+    background-color: black;
+    color: white;
+    padding: 10px;
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+  
+  .btn-enviar:hover {
+    background-color: #333;
+    color: white;
+  }
+  
+  .contact-info {
+    background-color: #f8f9fa;
+    padding: 2rem;
+    border-radius: 8px;
+    margin-top: 2rem;
+  }
