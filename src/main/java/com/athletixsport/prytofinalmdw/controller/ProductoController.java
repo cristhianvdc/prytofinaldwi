@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController // <- Cambiado de @Controller a @RestController para API REST
-@RequestMapping("/api/productos") // <- Convención estándar de rutas API
+@RestController
+@RequestMapping("/api/productos") // Convención estándar de rutas API
 public class ProductoController {
 
     @Autowired
@@ -22,7 +22,7 @@ public class ProductoController {
     }
 
     @PostMapping
-    public ResponseEntity<?> guardar(@RequestBody Producto producto) { // <- @RequestBody procesa el JSON entrante
+    public ResponseEntity<?> guardar(@RequestBody Producto producto) { // @RequestBody procesa el JSON entrante
         if (producto.getCategoria() == null || producto.getCategoria().getId() == null) {
             return ResponseEntity.badRequest().body("Debe seleccionar una categoría obligatoriamente");
         }
@@ -33,7 +33,7 @@ public class ProductoController {
         return ResponseEntity.status(HttpStatus.CREATED).body(producto);
     }
 
-    @PutMapping("/{id}") // <- Verbo HTTP PUT correcto para actualizaciones
+    @PutMapping("/{id}") // Verbo HTTP PUT correcto para actualizaciones
     public ResponseEntity<?> actualizar(@PathVariable("id") Integer id, @RequestBody Producto producto) {
         Producto prodExistente = productoService.buscarPorId(id);
         if (prodExistente == null) {
@@ -44,7 +44,7 @@ public class ProductoController {
         return ResponseEntity.ok(producto);
     }
 
-    @DeleteMapping("/{id}") // <- Verbo HTTP DELETE correcto para eliminaciones
+    @DeleteMapping("/{id}") // Verbo HTTP DELETE correcto para eliminaciones
     public ResponseEntity<?> eliminar(@PathVariable("id") Integer id) {
         boolean result = productoService.eliminar(id);
         if (result) {

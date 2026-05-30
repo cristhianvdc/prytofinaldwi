@@ -79,7 +79,7 @@ public class CarritoController {
         return ResponseEntity.ok(response);
     }
 
-    @PutMapping("/actualizar") // Cambiado a PUT para semántica RESTful de actualización
+    @PutMapping("/actualizar")
     public ResponseEntity<Map<String, Object>> actualizar(
             @RequestParam Integer productoId,
             @RequestParam String talla,
@@ -96,7 +96,7 @@ public class CarritoController {
         return ResponseEntity.ok(response);
     }
 
-    @DeleteMapping("/eliminar/{index}") // Cambiado a DELETE para remoción de recursos
+    @DeleteMapping("/eliminar/{index}")
     public ResponseEntity<Map<String, Object>> eliminar(@PathVariable int index, HttpSession session) {
         carritoService.eliminarProducto(session, index);
 
@@ -107,7 +107,7 @@ public class CarritoController {
         return ResponseEntity.ok(response);
     }
 
-    @PostMapping("/procesar") // Cambiado a POST porque altera el estado del servidor (vacía/crea orden)
+    @PostMapping("/procesar")
     public ResponseEntity<Map<String, Object>> procesar(HttpSession session) {
         carritoService.vaciarCarrito(session);
 

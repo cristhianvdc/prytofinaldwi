@@ -18,13 +18,13 @@ import static org.springframework.security.config.Customizer.withDefaults;
 @EnableWebSecurity
 public class SecurityConfig {
 
-    // 1. Configuración del Encriptador exigido por la rúbrica y modelo de informe
+    // Configuración del Encriptador
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
 
-    // 2. Definición de Usuarios y Roles en memoria para la entrega de la Semana 10
+    // Definición de Usuarios y Roles
     @Bean
     public UserDetailsService userDetailsService(PasswordEncoder encoder) {
         UserDetails admin = User.withUsername("admin")
@@ -38,16 +38,15 @@ public class SecurityConfig {
         return new InMemoryUserDetailsManager(admin, cliente);
     }
 
-    // 3. Protección y restricción de Endpoints RESTful
+    // Protección y restricción de Endpoints RESTful
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .csrf(csrf -> csrf.disable()) // Se deshabilita CSRF para poder interactuar libremente mediante Postman
                 .authorizeHttpRequests(auth -> auth
-                        // Permite acceso libre para ver el catálogo de productos (Página de Inicio de Athletix Sport)
+                        // Permite acceso libre para ver el catálogo de productos
                         .requestMatchers(HttpMethod.GET, "/api/catalogo/**").permitAll()
 
-                        // 🛠️ CORREGIDO: Cambiado "/api/clientes/registro" por "/api/auth/**"
                         // Esto le da acceso libre tanto al Registro como al Login basados en DTOs
                         .requestMatchers("/api/contacto/**", "/api/auth/**").permitAll()
 

@@ -63,7 +63,7 @@ public class AuthController {
             return ResponseEntity.badRequest().body(response);
         }
 
-        // Validación simulada orientada a servicios REST para la Semana 10
+        // Validación  servicios REST 
         if (clienteService.existeCorreo(loginDTO.getCorreo())) {
             response.put("success", true);
             response.put("message", "Autenticación exitosa en Athletix Sport");

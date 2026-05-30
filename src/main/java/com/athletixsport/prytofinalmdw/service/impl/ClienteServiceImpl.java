@@ -12,7 +12,7 @@ public class ClienteServiceImpl implements IClienteService {
 
     private IClienteRepository clienteRepository;
 
-    // 1. Inyección del encriptador BCrypt definido en tu configuración de seguridad
+    // Inyección del encriptador BCrypt definido en tu configuración de seguridad
     @Autowired
     private PasswordEncoder passwordEncoder;
 
@@ -23,11 +23,11 @@ public class ClienteServiceImpl implements IClienteService {
 
     @Override
     public void registrarCliente(Cliente cliente) {
-        // 2. Extraemos la contraseña en texto plano, la encriptamos y la volvemos a setear
+        // Extraemos la contraseña en texto plano, la encriptamos y la volvemos a setear
         String passwordEncriptado = passwordEncoder.encode(cliente.getPassword());
         cliente.setPassword(passwordEncriptado);
 
-        // 3. Guardamos el cliente con la contraseña ya protegida en la base de datos
+        // Guardamos el cliente con la contraseña ya protegida en la base de datos
         clienteRepository.save(cliente);
     }
 

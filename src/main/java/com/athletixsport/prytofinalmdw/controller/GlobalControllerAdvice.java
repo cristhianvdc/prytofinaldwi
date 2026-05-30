@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import java.util.HashMap;
 import java.util.Map;
 
-@RestControllerAdvice // Cambiado a versión REST
+@RestControllerAdvice 
 public class GlobalControllerAdvice {
 
     // Captura cualquier error de recurso no encontrado o argumentos inválidos en la API
