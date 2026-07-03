@@ -1,0 +1,15 @@
+services:
+  mysql:
+    image: mysql:8.4
+    container_name: athletix-mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: athletix_sports
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "3307:3306"
+    volumes:
+      - athletix_mysql_data:/var/lib/mysql
+
+volumes:
+  athletix_mysql_data:

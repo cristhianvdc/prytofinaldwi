@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 675" role="img" aria-label="Athletix Sports producto">
+  <rect width="900" height="675" fill="#e5e7eb"/>
+  <path d="M190 160h170l90 78 90-78h170l60 150-110 45-34-78v238H274V277l-34 78-110-45 60-150z" fill="#111827"/>
+  <path d="M360 160l90 78 90-78 46 42-136 118-136-118 46-42z" fill="#2563eb"/>
+  <text x="450" y="590" text-anchor="middle" fill="#111827" font-family="Arial, sans-serif" font-size="44" font-weight="700">Athletix Sports</text>
+</svg>

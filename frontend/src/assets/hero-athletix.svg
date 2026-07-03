@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900" role="img" aria-label="Athletix Sports ropa deportiva">
+  <rect width="900" height="900" rx="48" fill="#111827"/>
+  <circle cx="650" cy="210" r="118" fill="#16a34a"/>
+  <circle cx="260" cy="680" r="160" fill="#2563eb"/>
+  <path d="M217 215h184l99 84 99-84h184l68 170-120 50-38-88v270c0 32-26 58-58 58H365c-32 0-58-26-58-58V347l-38 88-120-50 68-170z" fill="#f8fafc"/>
+  <path d="M401 215l99 84 99-84 50 48-149 130-149-130 50-48z" fill="#2563eb"/>
+  <path d="M365 510h270v62H365z" fill="#111827"/>
+  <path d="M395 604h210v34H395z" fill="#16a34a"/>
+  <text x="450" y="805" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="60" font-weight="800">ATHLETIX</text>
+</svg>
