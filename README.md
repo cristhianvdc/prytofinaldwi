@@ -205,10 +205,10 @@ Instalar dependencias:
 npm install
 ```
 
-Iniciar Angular:
+Iniciar Angular en modo desarrollo:
 
 ```bash
-npm start
+npm run dev
 ```
 
 El frontend se ejecuta en:
@@ -380,4 +380,3 @@ El sistema se encuentra funcional para ejecucion local y cubre los modulos princ
 - Contacto
 - Seguridad
 - Persistencia en MySQL
-

@@ -3,8 +3,10 @@
   "version": "1.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --open=false",
-    "build": "ng build",
+    "dev": "ng serve --open=false",
+    "start": "serve -s dist/athletix-sports-web -l tcp://0.0.0.0:${PORT:-4200}",
+    "prebuild": "node scripts/write-env.mjs",
+    "build": "ng build --configuration production",
     "test": "ng test"
   },
   "private": true,
@@ -20,6 +22,7 @@
     "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.11.3",
     "rxjs": "~7.8.1",
+    "serve": "^14.2.4",
     "tslib": "^2.6.3",
     "zone.js": "~0.14.10"
   },
