@@ -224,7 +224,7 @@ El sistema se encuentra desplegado en Railway con servicios separados para front
 ### URLs De Produccion
 
 ```text
-Frontend: https://athletix-frontend-production.up.railway.app
+Frontend: https://athletixstore.up.railway.app
 Backend:  https://athletix-backend-production-bbfd.up.railway.app
 API:      https://athletix-backend-production-bbfd.up.railway.app/api
 ```
