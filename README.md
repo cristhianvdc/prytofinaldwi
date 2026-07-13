@@ -217,6 +217,39 @@ El frontend se ejecuta en:
 http://localhost:4200
 ```
 
+## Despliegue En La Nube
+
+El sistema se encuentra desplegado en Railway con servicios separados para frontend, backend y base de datos MySQL.
+
+### URLs De Produccion
+
+```text
+Frontend: https://athletix-frontend-production.up.railway.app
+Backend:  https://athletix-backend-production-bbfd.up.railway.app
+API:      https://athletix-backend-production-bbfd.up.railway.app/api
+```
+
+### Variables Principales En Railway
+
+Backend:
+
+```text
+DB_URL
+DB_USERNAME
+DB_PASSWORD
+JWT_SECRET
+FRONTEND_ORIGIN
+UPLOAD_DIR
+```
+
+Frontend:
+
+```text
+API_ORIGIN
+```
+
+El backend utiliza un volumen persistente montado en `/data` y guarda imagenes subidas en `/data/uploads`.
+
 ## Ejecucion Opcional Con Docker
 
 El archivo `docker-compose.yml` se incluye como ayuda opcional para levantar MySQL rapidamente. No es obligatorio para ejecutar el sistema.
@@ -357,7 +390,6 @@ El sistema implementa seguridad con Spring Security y JWT.
 
 ## Posibles Mejoras Futuras
 
-- Despliegue completo en la nube.
 - Documentacion Swagger/OpenAPI para endpoints.
 - Pruebas unitarias e integracion mas completas.
 - Pasarela de pagos.
